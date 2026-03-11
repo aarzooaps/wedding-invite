@@ -1,3 +1,102 @@
+#welcomeScreen{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#111;
+z-index:9999;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+
+}
+
+/* Curtain panels */
+
+.curtain{
+
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:#8b0000;
+transition:all 1.5s ease;
+
+}
+
+.curtain.left{
+
+left:0;
+
+}
+
+.curtain.right{
+
+right:0;
+
+}
+
+/* When open */
+
+#welcomeScreen.open .left{
+
+transform:translateX(-100%);
+
+}
+
+#welcomeScreen.open .right{
+
+transform:translateX(100%);
+
+}
+
+.welcome-content{
+
+position:relative;
+z-index:2;
+text-align:center;
+
+}
+
+.invite-text{
+
+letter-spacing:3px;
+font-size:18px;
+margin-bottom:10px;
+
+}
+
+#welcomeScreen h1{
+
+font-family:"Playfair Display";
+font-size:48px;
+margin-bottom:10px;
+
+}
+
+#openInvite{
+
+margin-top:20px;
+padding:12px 30px;
+font-size:16px;
+border:none;
+border-radius:30px;
+background:#d4af37;
+color:white;
+cursor:pointer;
+
+}
+
+#openInvite:hover{
+
+background:#b9982f;
+
+}
+
 body{
 
 margin:0;
