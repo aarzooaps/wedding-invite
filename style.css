@@ -1,347 +1,52 @@
-#welcomeScreen{
+/* Basic Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#3b0000;
-z-index:9999;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-
+/* Fullscreen page sections */
+section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  transition: all 1s ease;
 }
 
-/* Curtains */
-
-.curtain{
-
-position:absolute;
-top:0;
-width:50%;
-height:100%;
-background:linear-gradient(90deg,#7a0000,#a00000);
-box-shadow:inset -10px 0 30px rgba(0,0,0,.6);
-transition:transform 2s cubic-bezier(.77,0,.18,1);
-
+/* Curtain Welcome Page */
+#welcome {
+  background: linear-gradient(to bottom, #ffdd00, #ff6600);
+  position: relative;
+  overflow: hidden;
+}
+#curtain-left, #curtain-right {
+  position: absolute;
+  top: 0; height: 100%; width: 50%;
+  background: #ff4444;
+  z-index: 2;
+  transition: all 2s ease;
+}
+#curtain-left { left: 0; }
+#curtain-right { right: 0; }
+#welcome h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  opacity: 0;
+  transition: opacity 2s ease 2s;
 }
 
-/* Curtain folds */
-
-.curtain:before{
-
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:repeating-linear-gradient(
-90deg,
-rgba(0,0,0,.2),
-rgba(0,0,0,.2) 10px,
-transparent 10px,
-transparent 20px
-);
-
-opacity:.25;
-
-}
-
-.curtain.left{
-left:0;
-}
-
-.curtain.right{
-right:0;
-}
-
-/* Golden center rope */
-
-.center-line{
-
-position:absolute;
-width:6px;
-height:100%;
-background:linear-gradient(#ffd700,#b89600);
-left:50%;
-transform:translateX(-50%);
-z-index:2;
-
-}
-
-/* Opening animation */
-
-#welcomeScreen.open .left{
-
-transform:translateX(-110%) rotate(-5deg);
-
-}
-
-#welcomeScreen.open .right{
-
-transform:translateX(110%) rotate(5deg);
-
-}
-
-#welcomeScreen.open .center-line{
-
-opacity:0;
-transition:opacity .5s;
-
-}
-
-/* Welcome content */
-
-.welcome-content{
-
-position:relative;
-z-index:3;
-text-align:center;
-animation:fadeIn 2s;
-
-}
-
-#welcomeScreen h1{
-
-font-family:"Playfair Display";
-font-size:55px;
-margin-bottom:10px;
-
-}
-
-.invite-text{
-
-letter-spacing:4px;
-font-size:18px;
-opacity:.9;
-
-}
-
-.welcome-sub{
-
-opacity:.8;
-
-}
-
-#openInvite{
-
-margin-top:25px;
-padding:14px 36px;
-font-size:16px;
-border:none;
-border-radius:40px;
-background:#d4af37;
-color:white;
-cursor:pointer;
-transition:.3s;
-
-}
-
-#openInvite:hover{
-
-transform:scale(1.1);
-
-}
-
-/* text animation */
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:scale(.9);
-}
-
-to{
-opacity:1;
-transform:scale(1);
-}
-
-}
-
-
-body{
-
-margin:0;
-font-family:Poppins,sans-serif;
-color:#333;
-text-align:center;
-
-}
-
-.hero{
-
-height:100vh;
-
-background:url("https://images.unsplash.com/photo-1519741497674-611481863552")
-center/cover;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-color:white;
-
-}
-
-.hero-content{
-
-background:rgba(0,0,0,0.5);
-
-padding:40px;
-
-border-radius:10px;
-
-}
-
-h1{
-
-font-family:"Playfair Display";
-
-font-size:60px;
-
-margin-bottom:10px;
-
-}
-
-.tagline{
-
-font-size:18px;
-
-margin-bottom:10px;
-
-}
-
-.date{
-
-font-size:20px;
-
-margin-bottom:20px;
-
-}
-
-.btn{
-
-background:#d4af37;
-
-color:white;
-
-padding:12px 25px;
-
-border-radius:30px;
-
-text-decoration:none;
-
-display:inline-block;
-
-}
-
-.save-date{
-
-padding:80px 20px;
-
-background:#fafafa;
-
-}
-
-.events{
-
-padding:80px 20px;
-
-}
-
-.event-container{
-
-display:flex;
-
-justify-content:center;
-
-gap:30px;
-
-flex-wrap:wrap;
-
-}
-
-.event-card{
-
-width:250px;
-
-background:white;
-
-padding:30px;
-
-border-radius:10px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-
-transition:transform .3s;
-
-}
-
-.event-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.event-date{
-
-color:#d4af37;
-
-font-weight:bold;
-
-}
-
-.countdown-section{
-
-padding:80px 20px;
-
-background:#fff7e8;
-
-}
-
-#countdown{
-
-font-size:30px;
-
-margin-top:20px;
-
-}
-
-.venue-section{
-
-padding:80px 20px;
-
-}
-
-.rsvp{
-
-padding:80px 20px;
-
-background:#fafafa;
-
-}
-
-footer{
-
-padding:30px;
-
-background:#111;
-
-color:white;
-
-}
-
-@media(max-width:768px){
-
-h1{
-
-font-size:40px;
-
-}
-
-}
+/* Event Pages */
+#haldi { background: #fdd835; color: #000; }
+#mehendi { background: #43a047; }
+#carnival { background: #f50057; }
+#sangeet { background: #6a1b9a; }
+#chaak-bhaat { background: #ff8f00; color: #000; }
+#phere { background: #b71c1c; }
+
+h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+p { font-size: 1.5rem; margin-bottom: 1rem; }
+
+iframe { border: 0; width: 300px; height: 200px; margin-top: 10px; }
