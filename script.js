@@ -16,3 +16,17 @@ document.getElementById("countdown").innerHTML =
 days + " Days " + hours + " Hours " + minutes + " Minutes";
 
 },1000);
+const openBtn = document.getElementById("openInvite");
+const welcomeScreen = document.getElementById("welcomeScreen");
+
+openBtn.addEventListener("click", function(){
+
+welcomeScreen.classList.add("open");
+
+setTimeout(()=>{
+
+welcomeScreen.style.display="none";
+
+},1600);
+
+});
