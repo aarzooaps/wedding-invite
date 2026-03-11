@@ -27,6 +27,9 @@ setTimeout(()=>{
 
 welcomeScreen.style.display="none";
 
-},1600);
+document.body.style.overflow="auto";
+
+},2000);
 
 });
+
