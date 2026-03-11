@@ -1,90 +1,181 @@
 body{
-  margin:0;
-  font-family: "Segoe UI", sans-serif;
-  background:#fafafa;
-  color:#333;
-  text-align:center;
+
+margin:0;
+font-family:Poppins,sans-serif;
+color:#333;
+text-align:center;
+
 }
 
 .hero{
-  height:90vh;
-  background:url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e") center/cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
+
+height:100vh;
+
+background:url("https://images.unsplash.com/photo-1519741497674-611481863552")
+center/cover;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+
 }
 
-.overlay{
-  background:rgba(0,0,0,0.4);
-  padding:40px;
-  border-radius:10px;
+.hero-content{
+
+background:rgba(0,0,0,0.5);
+
+padding:40px;
+
+border-radius:10px;
+
 }
 
 h1{
-  font-size:60px;
-  margin:0;
+
+font-family:"Playfair Display";
+
+font-size:60px;
+
+margin-bottom:10px;
+
 }
 
-.subtitle{
-  font-size:24px;
+.tagline{
+
+font-size:18px;
+
+margin-bottom:10px;
+
 }
 
 .date{
-  font-size:20px;
+
+font-size:20px;
+
+margin-bottom:20px;
+
 }
 
-.details{
-  padding:60px 20px;
+.btn{
+
+background:#d4af37;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+display:inline-block;
+
 }
 
-.city{
-  font-size:22px;
-  font-weight:600;
-}
+.save-date{
 
-.venue{
-  color:#777;
+padding:80px 20px;
+
+background:#fafafa;
+
 }
 
 .events{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  padding:40px;
+
+padding:80px 20px;
+
+}
+
+.event-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
 }
 
 .event-card{
-  background:white;
-  padding:30px;
-  width:260px;
-  border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  transition:transform 0.3s;
+
+width:250px;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+transition:transform .3s;
+
 }
 
 .event-card:hover{
-  transform:translateY(-10px);
+
+transform:translateY(-10px);
+
 }
 
 .event-date{
-  color:#e63946;
-  font-weight:bold;
+
+color:#d4af37;
+
+font-weight:bold;
+
 }
 
-.countdown{
-  padding:60px 20px;
-  background:#fff3f3;
+.countdown-section{
+
+padding:80px 20px;
+
+background:#fff7e8;
+
 }
 
-#timer{
-  font-size:30px;
-  margin-top:20px;
+#countdown{
+
+font-size:30px;
+
+margin-top:20px;
+
+}
+
+.venue-section{
+
+padding:80px 20px;
+
+}
+
+.rsvp{
+
+padding:80px 20px;
+
+background:#fafafa;
+
 }
 
 footer{
-  padding:40px;
-  background:#111;
-  color:white;
+
+padding:30px;
+
+background:#111;
+
+color:white;
+
+}
+
+@media(max-width:768px){
+
+h1{
+
+font-size:40px;
+
+}
+
 }
