@@ -32,4 +32,10 @@ document.body.style.overflow="auto";
 },2000);
 
 });
+// Curtain Animation
+window.addEventListener('load', () => {
+  document.getElementById('curtain-left').style.width = '0';
+  document.getElementById('curtain-right').style.width = '0';
+  document.querySelector('#welcome h1').style.opacity = '1';
+});
 
